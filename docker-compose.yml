@@ -1,0 +1,41 @@
+version: '3.8'
+
+networks:
+  go-app:
+    driver: bridge
+
+services:
+  app:
+    container_name: golang-api
+    build: .
+    ports:
+      - "8080:8080"
+    restart: on-failure
+    volumes:
+      - ./api:/usr/src/app/
+    depends_on:
+      - db
+    networks:
+      - go-app
+
+  db:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=golang_api
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./database:/var/lib/mysql
+    networks:
+      - go-app
+  
+  cache:
+    image: redis:alpine
+    restart: always
+    volumes:
+      - ./redis-data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - go-app

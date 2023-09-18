@@ -19,3 +19,8 @@
 
 # Go workspace file
 go.work
+
+# Docker files
+database/
+redis-data/
+.env

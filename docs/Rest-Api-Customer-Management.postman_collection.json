@@ -1,0 +1,1014 @@
+{
+	"info": {
+		"_postman_id": "f34347a1-4ecd-41f4-8fc9-6b9758315b54",
+		"name": "Rest-Api-Customer-Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27923386"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Email\": \"admin@demo.com\",\n    \"Password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/auth/login",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login Ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Email\": \"admin@demo.com\",\n    \"Password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/v1/auth/login",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 21:10:10 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "284"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"OK\",\n    \"errors\": null,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"admin\",\n        \"email\": \"admin@demo.com\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTY5NTA3MjMxMCwiaWF0IjoxNjk1MDcxNDEwLCJpc3MiOiJoYXJvbGRwYWNoYSJ9.ro52IRPqHe9zOAlGIRFE6zHTKhlkObQJ9NzgXcklCqQ\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Pedro\",\n    \"Email\": \"pedro@gmail.com\",\n    \"Password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/auth/register",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register Ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"Pedro\",\n    \"Email\": \"pedro@gmail.com\",\n    \"Password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/v1/auth/register",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 21:10:40 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "285"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"OK\",\n    \"errors\": null,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Pedro\",\n        \"email\": \"pedro@gmail.com\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTY5NTA3MjM0MCwiaWF0IjoxNjk1MDcxNDQwLCJpc3MiOiJoYXJvbGRwYWNoYSJ9.Lpiz9rxvxyjho073rBp10O0_Q_gNlIDhmj_xqAoYOo0\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "UserProfile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/users/profile",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UserProfile Invalid Token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/api/v1/users/profile",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 21:11:30 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"token invalidd\",\n    \"errors\": [\n        \"Token is expired\"\n    ],\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateUsers",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Harold\",\n    \"Email\": \"admin@gmail.com\",\n    \"Password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/users",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/customers",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Customers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}/api/v1/customers",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 21:13:58 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "560"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"OK\",\n    \"errors\": null,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"dni\": \"47025743\",\n            \"name\": \"Harold\",\n            \"last_name\": \"Pacha\",\n            \"birthdate\": \"1991-11-14T00:00:00Z\",\n            \"age\": 31,\n            \"department\": {\n                \"id\": 23,\n                \"name\": \"Tacna\",\n                \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n                \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n            },\n            \"address\": \"Calle Jose Toribio Ara 888\"\n        },\n        {\n            \"id\": 8,\n            \"dni\": \"45454545\",\n            \"name\": \"Jose\",\n            \"last_name\": \"Perez\",\n            \"birthdate\": \"1995-11-14T00:00:00Z\",\n            \"age\": 27,\n            \"department\": {\n                \"id\": 2,\n                \"name\": \"Ancash\",\n                \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n                \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n            },\n            \"address\": \"av. sdfsdfsdf\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "CustomerById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/customers/1",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CustomerById",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/v1/customers/1",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 21:14:24 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "312"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"OK\",\n    \"errors\": null,\n    \"data\": {\n        \"id\": 1,\n        \"dni\": \"47025743\",\n        \"name\": \"Harold\",\n        \"last_name\": \"Pacha\",\n        \"birthdate\": \"1991-11-14T00:00:00Z\",\n        \"age\": 31,\n        \"department\": {\n            \"id\": 23,\n            \"name\": \"Tacna\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        \"address\": \"Calle Jose Toribio Ara 888\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateCustomers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"dni\": \"47025743\",\n    \"name\": \"Harold\",\n    \"last_name\": \"Pacha Mamani\",\n    \"birthdate\": \"1991-11-14T15:04:05Z\",\n    \"department_id\": 23,\n    \"address\": \"Calle Jose Toribio Ara 888\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/customers",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateCustomers",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"dni\": \"47025743\",\n    \"name\": \"Harold\",\n    \"last_name\": \"Pacha Mamani\",\n    \"birthdate\": \"1991-11-14T15:04:05Z\",\n    \"department_id\": 23,\n    \"address\": \"Calle Jose Toribio Ara 888\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/v1/customers",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 21:14:49 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "319"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"OK\",\n    \"errors\": null,\n    \"data\": {\n        \"id\": 1,\n        \"dni\": \"47025743\",\n        \"name\": \"Harold\",\n        \"last_name\": \"Pacha Mamani\",\n        \"birthdate\": \"1991-11-14T00:00:00Z\",\n        \"age\": 31,\n        \"department\": {\n            \"id\": 23,\n            \"name\": \"Tacna\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        \"address\": \"Calle Jose Toribio Ara 888\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteCustomers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/customers/9",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"9"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteCustomers Ok",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/v1/customers/9",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"9"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 21:17:14 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Customer with ID 9 successfuly deleted\",\n    \"errors\": null,\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "AddCustomers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dni\": \"13431343\",\n    \"name\": \"Edgard\",\n    \"last_name\": \"Perez\",\n    \"birthdate\": \"1997-11-14T15:04:05Z\",\n    \"department_id\": 3,\n    \"address\": \"Calle Jose Toribio Ara 888\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/customers",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AddCustomers Incorrect DNI",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dni\": \"1343\",\n    \"name\": \"Edgard\",\n    \"last_name\": \"Perez\",\n    \"birthdate\": \"1997-11-14T15:04:05Z\",\n    \"department_id\": 3,\n    \"address\": \"Calle Jose Toribio Ara 888\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/v1/customers",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 21:15:40 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"failed to process request\",\n    \"errors\": [\n        \"Key: 'CustomerCreateDTO.DNI' Error:Field validation for 'DNI' failed on the 'min' tag\"\n    ],\n    \"data\": {}\n}"
+				},
+				{
+					"name": "AddCustomers Ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dni\": \"13431343\",\n    \"name\": \"Edgard\",\n    \"last_name\": \"Perez\",\n    \"birthdate\": \"1997-11-14T15:04:05Z\",\n    \"department_id\": 3,\n    \"address\": \"Calle Jose Toribio Ara 888\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/v1/customers",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 21:16:11 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "314"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"OK\",\n    \"errors\": null,\n    \"data\": {\n        \"id\": 9,\n        \"dni\": \"13431343\",\n        \"name\": \"Edgard\",\n        \"last_name\": \"Perez\",\n        \"birthdate\": \"1997-11-14T00:00:00Z\",\n        \"age\": 25,\n        \"department\": {\n            \"id\": 3,\n            \"name\": \"Apurimac\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        \"address\": \"Calle Jose Toribio Ara 888\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "AllDepartments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Title\": \"Jungle Book\",\n    \"Description\": \"After a threat from the tiger Shere Khan forces him to flee the jungle, a man-cub named Mowgli embarks on a journey of self discovery with the help of panther\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/departments/all",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"departments",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AllDepartments",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Title\": \"Jungle Book\",\n    \"Description\": \"After a threat from the tiger Shere Khan forces him to flee the jungle, a man-cub named Mowgli embarks on a journey of self discovery with the help of panther\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/v1/departments/all",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"departments",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Sep 2023 21:16:25 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"OK\",\n    \"errors\": null,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Amazonas\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Ancash\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Apurimac\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Arequipa\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Ayacucho\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Cajamarca\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Callao\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Cusco\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Huancavelica\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Huanuco\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Ica\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Junin\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"La libertad\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Lambayeque\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Lima\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Loreto\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Madre de dios\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 18,\n            \"name\": \"Moquegua\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 19,\n            \"name\": \"Pasco\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"Piura\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"Puno\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 22,\n            \"name\": \"San martin\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 23,\n            \"name\": \"Tacna\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 24,\n            \"name\": \"Tumbes\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        },\n        {\n            \"id\": 25,\n            \"name\": \"Ucayali\",\n            \"createdAt\": \"2023-09-18T13:53:09.999Z\",\n            \"updatedAt\": \"2023-09-18T13:53:09.999Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "AddDepartments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Callao\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/departments",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDepartmentsById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 3,\n    \"total\": 67\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/departments/1",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"departments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateDepartments",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4,\n    \"name\": \"Nueva provincia\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/departments",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDepartments",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4,\n    \"amount\": 323,\n    \"total\": 6723.2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/departments/26",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"departments",
+						"26"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTY5NTA3MjMxMCwiaWF0IjoxNjk1MDcxNDEwLCJpc3MiOiJoYXJvbGRwYWNoYSJ9.ro52IRPqHe9zOAlGIRFE6zHTKhlkObQJ9NzgXcklCqQ",
+			"type": "string"
+		}
+	]
+}
